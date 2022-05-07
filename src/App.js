@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import NotFound from './Pages/NotFound/NotFound';
+import ProductAdd from './Pages/ProductAdd/ProductAdd';
 
 function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/users')
+      .then(res => res.json())
+      .then(data => setUsers(data))
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Data: {users.length}</h1>
+      <Routes>
+        <Route path='/' element={<ProductAdd></ProductAdd>}></Route>
+        <Route path='/addProduct' element={<ProductAdd></ProductAdd>}></Route>
+        {/* <Route path='/orders' element={<Order />}></Route>
+
+        <Route path='/inventory' element={
+          <RequireAuth>
+            <Inventory />
+          </RequireAuth>}>
+        </Route>
+
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/login' element={<LogIn />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route> */}
+        <Route path='/*' element={<NotFound></NotFound>}></Route>
+
+      </Routes>
     </div>
   );
 }
