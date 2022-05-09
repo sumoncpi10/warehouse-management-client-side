@@ -1,53 +1,53 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const ProductAdd = () => {
+    const handleAddProduct = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const brand = e.target.brand.value;
+        const price = e.target.price.value;
+        const quantity = e.target.quantity.value;
+        const img = e.target.img.value;
+        // console.log(name, email, password);
+        const user = { name, brand, price, quantity, img };
+        // send data to the server 
+        fetch('http://localhost:5000/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                this.e.reset();
+                toast("Product Add Successfully!");
+            })
+    }
     return (
         <div className='container'>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" />
+            <h1>Add Your Product</h1>
+            <form onSubmit={handleAddProduct}>
+                <div class="d-flex flex-column justify-content-center mx-auto">
+                    <div class="row mb-2">
+                        <input type="text" name='name' class="form-control" placeholder="Product name" />
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" />
+                    <div class="row mb-2">
+                        <input type="text" name='brand' class="form-control" placeholder="Brand name" />
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity" />
+                    <div class="row mb-2">
+                        <input type="text" name='price' class="form-control" placeholder="Unit Price" />
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
+                    <div class="row mb-2">
+                        <input type="text" name='quantity' class="form-control" placeholder="Quantity" />
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip" />
+                    <div class="row mb-2">
+                        <input type="text" name='img' class="form-control" placeholder="Img Url" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" />
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button class="btn btn-primary m-3" type="submit">Add Product</button>
             </form>
         </div>
     );
