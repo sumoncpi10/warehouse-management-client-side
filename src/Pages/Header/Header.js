@@ -27,7 +27,7 @@ const Header = () => {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">XCN Warehouse</a>
+                    <Link class="navbar-brand" to='/'>XCN Warehouse</Link>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
                             <Link to='/' class="nav-link" href="#">Home </Link>
@@ -37,6 +37,9 @@ const Header = () => {
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link" to='/inventory'>Inventory</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link class="nav-link" to='/blogs'>Blogs</Link>
                         </li>
                         <li class="nav-item">
                             <Link to='/about' class="nav-link " href="#">About</Link>

@@ -18,14 +18,9 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import MyItems from './Pages/MyItems/MyItems';
+import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
 function App() {
-  // const [users, setUsers] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:5000/users')
-  //     .then(res => res.json())
-  //     .then(data => setUsers(data))
-  // }, [])
   return (
     <div className="App">
       {/* <h1>My Data: {users.length}</h1> */}
@@ -33,16 +28,18 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/user/addUser' element={<AddUser></AddUser>}></Route>
-        <Route path='/products' element={<Products></Products>}></Route>
+        <Route path='/inventory' element={<Inventory />}></Route>
+        
+        <Route path='/Products' element={<Products></Products>}></Route>
         <Route path='/product/:id' element={<PlaceOrder />}></Route>
         <Route path='/product/addProduct' element={
           <RequireAuth>
             <ProductAdd></ProductAdd>
           </RequireAuth>}>
         </Route>
-        <Route path='/inventory' element={
+        <Route path='/inventory/:id' element={
           <RequireAuth>
-            <Inventory />
+           <UpdateProduct />
           </RequireAuth>}>
         </Route>
         <Route path='/myitems' element={

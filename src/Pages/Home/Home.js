@@ -1,11 +1,13 @@
 import React from 'react';
 import About from '../About/About';
-import Products from '../Products/Products';
+import HomeProducts from '../HomeProducts/HomeProducts';
+
 
 const Home = () => {
     return (
         <div>
-            <Products></Products>
+            <HomeProducts></HomeProducts>
+            {/* <InventoryProduct/> */}
             <About></About>
         </div>
     );
