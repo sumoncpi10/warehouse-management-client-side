@@ -1,7 +1,15 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { img, name, price, quantity, brand } = product;
+    const { _id, img, name, price, quantity, brand, description, supplier } = product;
+    const navigate = useNavigate();
+    console.log(window.location.pathname)
+    const NevigateToDtail = (id) => {
+
+        window.location.pathname = `product/${_id}`;
+
+    }
     return (
         <div className="col  col-md-4 p-3">
             <div className="card h-100">
@@ -9,11 +17,13 @@ const Product = ({ product }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <h6>Price: ${price}</h6>
-                    <p className="card-text">Manufacturer: {brand}</p>
-                    <p><small>Rating: {quantity}</small></p>
+                    <p className="card-text p-0 mb-0">Manufacturer: {brand}</p>
+                    <p className="card-text p-0">Supplier: {supplier ? supplier : brand}</p>
+                    <p><small title={description}>{description?.length > 180 ? description.slice(0, 180) + '...' : description}</small></p>
+                    <p className='m-0'><small>Stock: {quantity}</small></p>
                 </div>
-                <div className="card-footer">
-                    <button className="w-100">View more</button>
+                <div className="card-footer border-0">
+                    <Link to='' ><button className="w-100 border-0 btn btn-primary" onClick={NevigateToDtail}>Add To Cart</button></Link>
                 </div>
             </div>
         </div>

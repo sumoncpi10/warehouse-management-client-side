@@ -15,7 +15,7 @@ const Footer = () => {
                             {/* <use xlink:href="#bootstrap" /> */}
                         </svg>
                     </a>
-                    <span class="text-muted">&copy; {year} TakePic Photography of Bangladesh </span>
+                    <span class="text-muted">&copy; {year} Phone Warehouse of Bangladesh </span>
                 </div>
 
                 <ul className="socials">

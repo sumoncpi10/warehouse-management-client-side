@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddUser = () => {
 
@@ -19,7 +20,8 @@ const AddUser = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('success', data)
+                e.target.reset();
+                toast('success', data)
             })
     }
     return (
