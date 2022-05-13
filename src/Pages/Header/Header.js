@@ -53,8 +53,10 @@ const Header = () => {
                                 user?.email ?
                                     <div className='d-flex'>
                                         <Link to='/myitems' className="btn btn-primary">My Items</Link>
+                                        <Link to='/product/addProduct' className="btn btn-primary">Add Items</Link>
                                         <Link to='/inventory' className="btn btn-primary">Manage Inventories</Link>
-                                        <Link to='/user/addUser' className="btn btn-primary">Add Users</Link>
+                                        <Link to='/users' className="btn btn-primary">Manage Users</Link>
+
                                         <button onClick={handleGoogleSignOut} className="btn btn-primary" href="#">Sign out</button>
 
                                         {/* <div className="dropdown text-end">

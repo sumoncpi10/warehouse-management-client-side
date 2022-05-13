@@ -19,6 +19,8 @@ import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import MyItems from './Pages/MyItems/MyItems';
 import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
+import Users from './Pages/Users/Users';
+import Blogs from './Pages/Blogs/Blogs';
 function App() {
 
   return (
@@ -28,8 +30,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/user/addUser' element={<AddUser></AddUser>}></Route>
+        <Route path='/users' element={<Users></Users>}></Route>
         <Route path='/inventory' element={<Inventory />}></Route>
-        
+
         <Route path='/Products' element={<Products></Products>}></Route>
         <Route path='/product/:id' element={<PlaceOrder />}></Route>
         <Route path='/product/addProduct' element={
@@ -39,7 +42,7 @@ function App() {
         </Route>
         <Route path='/inventory/:id' element={
           <RequireAuth>
-           <UpdateProduct />
+            <UpdateProduct />
           </RequireAuth>}>
         </Route>
         <Route path='/myitems' element={
@@ -47,6 +50,7 @@ function App() {
             <MyItems />
           </RequireAuth>}>
         </Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route >
         <Route path='/signup' element={<SignUp />}></Route>

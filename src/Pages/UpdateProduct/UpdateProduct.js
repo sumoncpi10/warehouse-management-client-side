@@ -45,6 +45,60 @@ const UpdateProduct = () => {
                 toast("Product Update Successfully!");
             })
     }
+    const handleQuantity = (e) => {
+        e.preventDefault();
+
+        const quantity = e.target.qty.value;
+
+        // console.log(name, email, password);
+        const product = { quantity };
+        // send data to the server 
+        fetch(`http://localhost:5000/product/${params.id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                e.target.reset();
+                toast("Quantity Update Successfully!");
+            })
+    }
+    const handleDelivered = (e) => {
+        e.preventDefault();
+        const { quantity, ...rest } = product;
+        if (quantity > 0) {
+            const newQuantity = parseInt(quantity) - 1;
+            const newProduct = { quantity: newQuantity, ...rest };
+            // console.log(newProduct)
+            setProduct(newProduct);
+
+
+            // console.log(name, email, password);
+            const productUpdate = { quantity: newQuantity };
+            // send data to the server 
+            fetch(`http://localhost:5000/product/${params.id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productUpdate)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('success', data);
+                    // e.target.reset();
+                    toast("Quantity Update Successfully!");
+                })
+        }
+        else {
+            toast("Update Stock Please!");
+        }
+
+    }
     const handleQuantityPlus = (e) => {
         const { quantity, ...rest } = product;
         const newQuantity = parseInt(quantity) + 1;
@@ -60,10 +114,13 @@ const UpdateProduct = () => {
     }
     const handleQuantityMinus = () => {
         const { quantity, ...rest } = product;
-        const newQuantity = parseInt(quantity) - 1;
-        const newProduct = { quantity: newQuantity, ...rest };
-        console.log(newProduct)
-        setProduct(newProduct);
+        if (quantity > 0) {
+            const newQuantity = parseInt(quantity) - 1;
+            const newProduct = { quantity: newQuantity, ...rest };
+            console.log(newProduct)
+            setProduct(newProduct);
+        }
+
         // quantity = quantity - 1;
         // price = quantity * product.price;
         // setQuantity(quantity);
@@ -115,8 +172,35 @@ const UpdateProduct = () => {
     return (
         <div className='container'>
             <h1 className='m-3'>Update Your Product: {product.name}</h1>
+            <form onSubmit={handleQuantity}>
+                <div className=''>
+                    <img src={product.img} alt="" srcset="" />
+                    <p></p>
+                    <button class="btn btn-primary m-3" onClick={handleDelivered}>Delivered</button>
+                    <div className=' d-flex align-items-center justify-content-center w-100'><div className="center " >
+                        <div className="input-group ">
+                            <span className="input-group-btn">
+                                <button type="button" onClick={handleQuantityMinus} className="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
+                                    <span className="glyphicon glyphicon-minus"><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></span>
+                                </button>
+                            </span>
+                            <input type="text" name="qty" className="form-control input-number" onChange={quantityChange} value={product?.quantity}
+                                min="1" max={product.quantity} />
+                            <span className="input-group-btn">
+                                <button type="button" onClick={handleQuantityPlus} className="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                                    <span className="glyphicon glyphicon-plus"><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></span>
+                                </button>
+                            </span>
+                        </div>
+                        <p></p>
+                    </div></div>
+
+
+                    <button class="btn btn-primary m-3" type="submit">Update Quantity</button>
+                </div>
+            </form>
             <form onSubmit={handleUpdateProduct}>
-                <img src={product.img} alt="" srcset="" />
+
                 <div class="d-flex flex-column justify-content-center mx-auto">
                     <div class="row mb-2">
                         <input onChange={nameChange} type="text" name='name' class="form-control" value={product.name} placeholder="Product name" />

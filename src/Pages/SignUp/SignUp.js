@@ -112,40 +112,6 @@ const SignUp = () => {
 
         </div>
 
-        // <div className=''>
-        //     <h1 className='mb-5'>Sign Up</h1>
-
-        //     <div className=' d-flex justify-content-center'>
-
-        //         <form onSubmit={handleFormSubmit} className='w-50'>
-        //             <div className="form-group">
-        //                 <label className="d-flex justify-content-start" htmlhtmlFor="exampleInputEmail1">Email address</label>
-        //                 <input onBlur={handleEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />
-        //                 <div className="invalid-feedback">
-        //                     Please provide a valid city.
-        //                 </div>
-        //                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-
-        //             </div>
-        //             {/* <p className='text-danger'>Please a valid Email</p> */}
-        //             <div className="form-group ">
-        //                 <label className="d-flex justify-content-start" htmlhtmlFor="exampleInputPassword1">Password</label>
-        //                 <input onBlur={handlePassword} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" required />
-        //             </div>
-        //             <div className="form-check">
-        //                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-        //                 <label className="d-flex justify-content-start" htmlhtmlFor="exampleCheck1">Check me out</label>
-        //             </div>
-        //             <button type="submit" className="btn btn-primary">Submit</button>
-        //         </form>
-
-        //     </div>
-        // </div>
-
-
-
-
-
     );
 };
 

@@ -34,7 +34,7 @@ const Inventory = () => {
             <nav class="navbar navbar-light bg-light justify-content-between container">
                 <a class="navbar-brand"></a>
                 <form class="form-inline">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><Link to='/product/addProduct'>Add Products</Link></button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><Link to='/product/addProduct'>Add New Items</Link></button>
                 </form>
             </nav>
 
