@@ -1,17 +1,19 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBYq-tVrVQKhnY7_IOFXjYd5-tm8o0IxMU",
-    authDomain: "ema-john-simple-mine.firebaseapp.com",
-    projectId: "ema-john-simple-mine",
-    storageBucket: "ema-john-simple-mine.appspot.com",
-    messagingSenderId: "66975535767",
-    appId: "1:66975535767:web:07297fc2bc11e14ff64fd2"
+    apiKey: "AIzaSyCkjTm97AtHB6QhzS-SDminBB57i8ezn48",
+    authDomain: "xcn-warehouse.firebaseapp.com",
+    projectId: "xcn-warehouse",
+    storageBucket: "xcn-warehouse.appspot.com",
+    messagingSenderId: "710385020410",
+    appId: "1:710385020410:web:887e3662f96327b6234843",
+    measurementId: "G-5PW9BJQR7S"
 };
 
 // Initialize Firebase
