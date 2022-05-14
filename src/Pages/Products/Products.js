@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firabase.init';
+import Loading from '../Loading/Loading';
 import Product from '../Product/Product';
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -11,7 +12,10 @@ const Products = () => {
         fetch('https://thawing-earth-85807.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, []);
+    if (products.length == 0) {
+        return <Loading></Loading>
+    }
     return (
         <div className=' '>
             {

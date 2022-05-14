@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firabase.init';
 import Product from '../Product/Product';
+import Loading from '../Loading/Loading';
 import InventoryProduct from '../InventoryProduct/InventoryProduct';
 const HomeProducts = () => {
     const [products, setProducts] = useState([]);
@@ -27,6 +28,9 @@ const HomeProducts = () => {
             setProducts(rest);
             // removeFromDb(product.id);
         }
+    }
+    if (products.length == 0) {
+        return <Loading></Loading>
     }
     return (
 
