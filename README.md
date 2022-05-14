@@ -1,6 +1,6 @@
 # XCN Warehouse
 
-This project was bootstrapped with React && MongoDB [Live Site XCN Warehouse](https://github.com/facebook/create-react-app).
+This project was bootstrapped with React && MongoDB [Live Site XCN Warehouse](https://xcn-warehouse.web.app/).
 
 
 
