@@ -5,7 +5,7 @@ const ProductDetail = () => {
     const params = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${params.id}`)
+        fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

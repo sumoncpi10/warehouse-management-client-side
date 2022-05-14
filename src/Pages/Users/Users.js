@@ -5,7 +5,7 @@ const Users = () => {
     let [users, setUsers] = useState([]);
     // let [quantity, setQuantity] = useState(1);
     useEffect(() => {
-        fetch(`http://localhost:5000/user`)
+        fetch(`https://thawing-earth-85807.herokuapp.com/user`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

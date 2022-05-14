@@ -8,7 +8,7 @@ const Products = () => {
     const [user] = useAuthState(auth);
     const path = window.location.pathname;
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://thawing-earth-85807.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

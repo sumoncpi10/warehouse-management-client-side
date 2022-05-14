@@ -14,7 +14,7 @@ const ProductAdd = () => {
         // console.log(name, email, password);
         const product = { name, brand, price, quantity, img, description, supplier };
         // send data to the server 
-        fetch('http://localhost:5000/product', {
+        fetch('https://thawing-earth-85807.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ const useProducts = () => {
     const [user] = useAuthState(auth);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`)
+        fetch(`https://thawing-earth-85807.herokuapp.com/order?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

@@ -21,7 +21,7 @@ const MyItems = () => {
     const handleRemoveProduct = product => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         if (proceed) {
-            fetch(`http://localhost:5000/order/${product._id}`, {
+            fetch(`https://thawing-earth-85807.herokuapp.com/order/${product._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

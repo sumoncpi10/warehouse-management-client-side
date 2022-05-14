@@ -9,7 +9,7 @@ const UpdateProduct = () => {
     let [product, setProduct] = useState([]);
     // let [quantity, setQuantity] = useState(1);
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${params.id}`)
+        fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -31,7 +31,7 @@ const UpdateProduct = () => {
         // console.log(name, email, password);
         const product = { name, brand, price, quantity, img, description, supplier };
         // send data to the server 
-        fetch(`http://localhost:5000/product/${params.id}`, {
+        fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +53,7 @@ const UpdateProduct = () => {
         // console.log(name, email, password);
         const product = { quantity };
         // send data to the server 
-        fetch(`http://localhost:5000/product/${params.id}`, {
+        fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const UpdateProduct = () => {
             // console.log(name, email, password);
             const productUpdate = { quantity: newQuantity };
             // send data to the server 
-            fetch(`http://localhost:5000/product/${params.id}`, {
+            fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

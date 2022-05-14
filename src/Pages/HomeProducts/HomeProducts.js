@@ -9,14 +9,14 @@ const HomeProducts = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch('http://localhost:5000/productshome')
+        fetch('https://thawing-earth-85807.herokuapp.com/productshome')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     const handleRemoveProduct = product => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         if (proceed) {
-            fetch(`http://localhost:5000/product/${product._id}`, {
+            fetch(`https://thawing-earth-85807.herokuapp.com/product/${product._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
