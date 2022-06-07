@@ -13,7 +13,7 @@ const firebaseConfig = {
     // storageBucket: process.env.REACT_APP_storageBucket,
     // messagingSenderId: process.env.REACT_APP_messagingSenderId,
     // appId: process.env.REACT_APP_appId,
-    // measurementId: process.env.REACT_APP_measurementId
+    // measurementId: process.env.REACT_APP_measurementId,
     apiKey: "AIzaSyCkjTm97AtHB6QhzS-SDminBB57i8ezn48",
     authDomain: "xcn-warehouse.firebaseapp.com",
     projectId: "xcn-warehouse",
