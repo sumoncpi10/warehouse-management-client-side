@@ -18,7 +18,7 @@ const PlaceOrder = () => {
     const shipping = 23;
 
     useEffect(() => {
-        fetch(`https://thawing-earth-85807.herokuapp.com/product/${params.id}`)
+        fetch(`https://manufacturer-website-s670.onrender.com/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -55,7 +55,7 @@ const PlaceOrder = () => {
         const img = product.img;
         price = price ? price : product.price;
         const order = { email, name, quantity, price, shipping, brand, city, zipCode, address, state, orderbyid, img };
-        fetch('https://thawing-earth-85807.herokuapp.com/addorder', {
+        fetch('https://manufacturer-website-s670.onrender.com/addorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

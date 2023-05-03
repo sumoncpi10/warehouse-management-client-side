@@ -9,7 +9,7 @@ const Products = () => {
     const [user] = useAuthState(auth);
     const path = window.location.pathname;
     useEffect(() => {
-        fetch('https://thawing-earth-85807.herokuapp.com/products')
+        fetch('https://manufacturer-website-s670.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

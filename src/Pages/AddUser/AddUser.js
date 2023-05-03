@@ -49,7 +49,7 @@ const AddUser = () => {
             // console.log(name, email, password);
             const user = { name, email, password };
             // send data to the server 
-            fetch('https://thawing-earth-85807.herokuapp.com/user', {
+            fetch('https://manufacturer-website-s670.onrender.com/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
