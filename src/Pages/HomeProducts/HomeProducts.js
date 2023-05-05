@@ -8,6 +8,7 @@ import InventoryProduct from '../InventoryProduct/InventoryProduct';
 const HomeProducts = () => {
     const [products, setProducts] = useState([]);
     const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
 
     useEffect(() => {
         fetch('https://manufacturer-website-s670.onrender.com/productshome')
